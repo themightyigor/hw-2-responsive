@@ -1,0 +1,175 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: $background-color;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.widget {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 390px;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.forecast {
+  background-color: $light-color;
+  position: relative;
+  padding: 17px 0;
+
+  &__button {
+    position: absolute;
+    width: 21px;
+    height: 19px;
+    right: 17px;
+    background: url('../images/refresh.png') no-repeat transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__icon,
+  &__content {
+    padding-top: 52px;
+  }
+
+  &__icon {
+    margin: 0 auto;
+    display: block;
+  }
+
+  &__content {
+    display: flex;
+    color: $grey-color;
+    align-items: center;
+    padding-left: 20px;
+  }
+}
+
+.content-forecast {
+  &__temperature {
+    font-size: 3.6rem;
+  }
+
+  &__description {
+    margin-left: 15px;
+  }
+
+  &__condition {
+    line-height: 1.4;
+    color: lighten($grey-color, 15%);
+    font-weight: 300;
+  }
+
+  &__location {
+    color: lighten($grey-color, 10%);
+    font-weight: 600;
+  }
+
+  &__date {
+    color: #fff;
+    background-color: $blue-color;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 13px 15px 10px 18px;
+    margin-left: auto;
+  }
+
+  &__month,
+  &__day {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+  }
+
+  &__month {
+    font-size: 14px;
+  }
+
+  &__day {
+    font-size: 18px;
+  }
+}
+
+.details {
+  background-color: $dark-color;
+  padding: 45px 50px 20px 45px;
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: inline;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-weight: 700;
+    color: #fff;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        text-transform: uppercase;
+        padding-left: nth($paddings, $i);
+        background-image: url(nth($icons, $i));
+      }
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.dot {
+  & button {
+    content: '';
+    display: block;
+    color: transparent;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #f1f8f9;
+    opacity: 0.2;
+    margin-right: 8px;
+  }
+
+  &:last-of-type button {
+    margin-right: 0;
+  }
+
+  &--active button {
+    opacity: 1;
+    background-color: #fff;
+    border: none;
+  }
+}
+
+@import 'adaptive';

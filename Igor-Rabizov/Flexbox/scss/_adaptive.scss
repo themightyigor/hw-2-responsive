@@ -1,0 +1,68 @@
+@media (max-width: 992px) {
+  .widget {
+    width: 100%;
+  }
+
+  .forecast {
+    padding-bottom: 0;
+
+    &__content {
+      padding: 0;
+      flex-direction: column;
+    }
+  }
+
+  .content-forecast {
+    &__temperature,
+    &__date {
+      margin: 25px 0 0 0;
+    }
+
+    &__temperature {
+      line-height: 0.7;
+    }
+
+    &__description {
+      margin: 15px 0 0 0;
+      text-align: center;
+    }
+
+    &__condition {
+      line-height: 1.5;
+    }
+
+    &__date {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+
+  .details {
+    &__list {
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #fff;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  .widget {
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .details {
+    padding: 20px 10px;
+  }
+}

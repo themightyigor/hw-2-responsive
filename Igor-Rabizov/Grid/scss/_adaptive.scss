@@ -1,0 +1,70 @@
+@media (max-width: 992px) {
+  .widget {
+    width: 100%;
+  }
+
+  .forecast {
+    padding-bottom: 0;
+
+    &__icon {
+      padding-bottom: 25px;
+    }
+
+    &__content {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: auto;
+      grid-template-columns: none;
+      grid-auto-rows: auto;
+      grid-row-gap: 20px;
+      padding: 0;
+    }
+  }
+
+  .content-forecast {
+    &__temperature {
+      text-align: center;
+      line-height: 0.7;
+    }
+
+    &__description {
+      text-align: center;
+    }
+
+    &__condition {
+      line-height: 1.5;
+    }
+
+    &__date {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+
+  .details {
+    &__list {
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #fff;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  .widget {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .details {
+    padding: 20px 10px;
+  }
+}
